@@ -1,6 +1,6 @@
 'use client'
 import { CarProps } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";
 import CustomButton from "./CustomButton";
@@ -31,9 +31,11 @@ const CarCard = ({ car }: CarCardProps) => {
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          // src={generateCarImageUrl()}
+          src='https://tse3.mm.bing.net/th/id/OIP.f6ved8wranJjaO8g0qDStgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3'
           alt="car model"
           fill
+          unoptimized
           priority
           className="object-contain"
         />
@@ -78,6 +80,7 @@ const CarCard = ({ car }: CarCardProps) => {
         closeModal={() => setisOpen(!isOpen)}
         car={car}
       />
+      
     </div>
   );
 };

@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={ `relative bg-white dark:bg-black-100 text-black dark:text-white ` }
+        className={ `relative` }
       >
         <Navbar />
         {children}

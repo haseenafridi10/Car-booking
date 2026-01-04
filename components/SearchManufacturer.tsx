@@ -21,8 +21,12 @@ const SearchManufacturer = ({manufacturer, setManufacturer}: SearchManufacturerP
   return (
     <div className='search-manufacturer'>
       <Combobox
-       value={manufacturer} onChange={setManufacturer}
-       >
+       value={manufacturer} 
+       onChange={(value) => {
+        if (value === null) return;
+        setManufacturer(value);
+       }}
+      >
   <div className="relative w-full">
 
     {/* INPUT WRAPPER */}
@@ -54,7 +58,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer}: SearchManufacturerP
       afterLeave={() => setQuery("")}
     >
       <Combobox.Options
-        className=".search-manufacturer__options rounded-md"
+        className="search-manufacturer__options rounded-md"
       >
         {filteredManufacturers.map((item) => (
           <Combobox.Option
